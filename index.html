@@ -191,6 +191,31 @@
       background: #eeeadf;
     }
 
+    .ganesh-header {
+  text-align: center;
+  margin-bottom: 24px;
+  font-family: serif;
+}
+
+.ganesh-header img {
+  display: block;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  margin: 0 auto 10px;
+}
+
+.ganesh-header h2 {
+  font-size: 21px;
+  margin: 8px 0 12px;
+}
+
+.ganesh-header p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 auto;
+}
+
     .footer {
       padding: 35px 20px;
       text-align: center;
@@ -271,34 +296,33 @@
 }
 
 .photo-gallery {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  align-items: start;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
 }
 
 .gallery-item {
   margin: 0;
+  width: 100%;
   min-width: 0;
   overflow: hidden;
-  background: transparent;
+  border-radius: 10px;
 }
 
 /* Keep the original photo proportions */
 .gallery-item img {
-  display: block;
+   display: block;
   width: 100%;
+  aspect-ratio: 3 / 4;
   height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Featured image spans two columns */
 .gallery-item.featured {
-  grid-column: span 2;
+   grid-column: auto;
   grid-row: auto;
 }
 
@@ -327,22 +351,34 @@
 
   .photo-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 8px;
   }
 
   .gallery-item.featured {
     grid-column: span 2;
   }
+  
 }
 
   </style>
 </head>
 
 <body>
-
   <!-- HERO / MAIN INVITATION -->
   <header class="hero">
+  
     <div class="hero-inner">
+      
+        <div class="ganesh-header">
+    <img src="images/ganesha.jpg" alt="Lord Ganesha">
+
+    <h2>॥ श्री गणेशाय नमः ॥</h2>
+
+    <p>
+      विघ्न हरण मंगल करण, श्री गणपति महाराज।<br>
+      प्रथम निमंत्रण आपको, पूरण करियो काज।
+    </p>
+  </div>
       <div class="eyebrow">Together with our families</div>
       <div class="ornament">✦ ❦ ✦</div>
       <div class="couple-photo">
@@ -375,7 +411,7 @@
   <!-- COUNTDOWN -->
   <section class="section">
     <div class="eyebrow">The countdown begins</div>
-    <h2 class="section-title">Until We Say "I Do"</h2>
+    <h2 class="section-title">Until the "Sacred Pheras"</h2>
 
     <div class="countdown" id="countdown"
          aria-live="polite">
@@ -412,18 +448,24 @@
   </div>
 
   <div class="photo-gallery">
-    <figure class="gallery-item">
-      <img src="images/1.jpeg"
-           loading="lazy">
-    </figure>
+
 
     <figure class="gallery-item">
-      <img src="images/2.jpeg"
+      <img src="images/IMG_2437.jpg"
            loading="lazy">
     </figure>
-
     <figure class="gallery-item">
-      <img src="images/11.jpeg"
+      <img src="images/IMG_5113.JPEG"
+           alt="The couple together"
+           loading="lazy">
+    </figure>
+    <figure class="gallery-item">
+      <img src="images/IMG_8909.jpg"
+           alt="The couple together"
+           loading="lazy">
+    </figure>
+    <figure class="gallery-item">
+      <img src="images/IMG_3137.jpg"
            alt="The couple together"
            loading="lazy">
     </figure>
@@ -445,19 +487,27 @@
 
     <div class="events">
       <article class="event-card">
-        <div class="eyebrow">The ceremony</div>
-        <h3>Wedding</h3>
-        <p id="weddingDate">Saturday, 21 November 2026</p>
-        <p>9:00 AM onwards</p>
-        <p>Rajmahal Palace, Jaipur</p>
+        <h3>Phoolo ke haldi and Carnival</h3>
+        <p id="weddingDate">Friday, 20 November 2026</p>
+        <p>2:30 PM onwards</p>
       </article>
 
       <article class="event-card">
-        <div class="eyebrow">The celebration</div>
+        <h3>Sangeet</h3>
+        <p>Friday, 20 November 2026</p>
+        <p>8:00 PM onwards</p>
+      </article>
+
+      <article class="event-card">
+        <h3>Baraat</h3>
+        <p>Saturday, 21 November 2026</p>
+        <p>12:30 PM onwards</p>
+      </article>
+
+      <article class="event-card">
         <h3>Reception</h3>
         <p>Saturday, 21 November 2026</p>
-        <p>7:00 PM onwards</p>
-        <p>Rajmahal Palace, Jaipur</p>
+        <p>7:30 PM onwards</p>
       </article>
     </div>
   </section>
@@ -467,11 +517,11 @@
     <div class="eyebrow">We look forward to seeing you</div>
     <h2 class="section-title">The Venue</h2>
 
-    <p><strong>Rajmahal Palace</strong></p>
-    <p>Jaipur, Rajasthan</p>
+    <p><strong>Regenta Anantam Resort</strong></p>
+    <p>Khatu Shyam Ji, Rajasthan</p>
 
     <a class="button" id="mapButton"
-       href="https://maps.google.com/?q=Rajmahal+Palace+Jaipur"
+       href="https://maps.google.com/?q=Regenta+Anantam+Resort+Khatu+Shyam+Ji"
        target="_blank" rel="noopener noreferrer">
       Get Directions
     </a>
