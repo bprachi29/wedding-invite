@@ -360,6 +360,44 @@
   }
 }
 
+.hero-inner h1 {
+  margin-bottom: 4px !important;
+}
+
+.family-details {
+  margin-top: 0 !important;
+  margin: 10px auto 24px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--green);
+}
+
+.family-details p:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 560px) {
+  .family-details {
+    margin: 4px auto 20px;
+    padding: 0 18px;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--green);
+  }
+
+  .family-details p {
+    margin: 3px 0;
+    overflow-wrap: break-word;
+  }
+}
+
+
     
 /* Wedding photo gallery */
 .gallery-section {
@@ -475,12 +513,18 @@
   >
 </div>  
       <p>Joyfully invite you to celebrate the wedding of</p>
-  
+      <br>
       <h1>
-        Ayush<br>
-        <span class="ampersand">&</span><br>
-        Sonali
-      </h1>
+        Ayush</h1><br>
+        <div class="family-details">
+          Son of Mrs. Babli Agrawal & Mr. B.K. Agrawal<br>Grandson of Late Mrs. Meera Agrawal & Late Mr. Kamta Prasad Agrawal
+        </div>
+        <br> 
+        <h1><span class="ampersand">&</span></h1><br>
+        <h1>Sonali</h1>
+        <div class="family-details">
+          Daughter of Mrs. Sushila Sharma & Mr. Ramswaroop Sharma<br>Granddaughter of Mrs. Kusum Sharma & Mr. Krishan Kumar Sharma
+        </div>
 
       <div class="ornament">— ❦ —</div>
 
@@ -573,7 +617,6 @@
     </p>
 
    <div class="events">
-
   <div class="event-date-group">
     <h3 class="event-date">
       <span>21</span> <span>November</span>
