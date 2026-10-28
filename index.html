@@ -15,7 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-  
   <style>
     :root {
       --cream: #f8f4ed;
@@ -274,6 +273,92 @@
         font-size: 21px;
       }
     }
+.events {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  margin: 35px auto 0;
+}
+
+.event-date-group {
+  width: 100%;
+  margin: 0 0 36px;
+}
+
+.event-date, 
+.event-date span  {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 56px !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+  line-height: 1.1;
+}
+
+.event-date {
+  text-align: center;
+  color: var(--green);
+  margin: 0 0 18px;
+}
+
+@media (max-width: 560px) {
+  .event-date,
+  .event-date span {
+    font-size: 42px !important;
+  }
+}
+
+.event-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+.event-card {
+  min-width: 0;
+  padding: 24px 16px;
+  background: var(--paper);
+  border: 1px solid #e4d9c7;
+  text-align: center;
+}
+
+.event-card h3 {
+  color: var(--green);
+  font-size: clamp(20px, 3vw, 31px);
+  line-height: 1.2;
+  margin: 0 0 10px;
+  overflow-wrap: anywhere;
+}
+
+.event-card p {
+  font-size: 13px;
+  margin: 6px 0;
+}
+
+@media (max-width: 560px) {
+  .event-date {
+    font-size: 28px;
+  }
+
+  .event-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .event-card {
+    padding: 18px 8px;
+  }
+
+  .event-card h3 {
+    font-size: 20px;
+  }
+
+  .event-card p {
+    font-size: 11px;
+  }
+}
 
     
 /* Wedding photo gallery */
@@ -359,6 +444,7 @@
     grid-column: span 2;
   }
   
+  
 }
 
   </style>
@@ -389,7 +475,7 @@
   >
 </div>  
       <p>Joyfully invite you to celebrate the wedding of</p>
-
+  
       <h1>
         Ayush<br>
         <span class="ampersand">&</span><br>
@@ -486,31 +572,39 @@
       Please join us for these special moments.
     </p>
 
-    <div class="events">
+   <div class="events">
+  <div class="event-date-group">
+    <h3 class="event-date">
+    <span>20</span> <span>November</span>
+</h3>
+    <div class="event-cards">
       <article class="event-card">
-        <h3>Phoolo ke haldi and Carnival</h3>
-        <p id="weddingDate">Friday, 20 November 2026</p>
+        <h3>Phoolo ki haldi & Carnival</h3>
         <p>2:30 PM onwards</p>
       </article>
-
       <article class="event-card">
         <h3>Sangeet</h3>
-        <p>Friday, 20 November 2026</p>
         <p>8:00 PM onwards</p>
       </article>
+    </div>
+  </div>
 
+  <div class="event-date-group">
+    <h3 class="event-date">
+      <span>21</span> <span>November</span>
+    </h3>
+    <div class="event-cards">
       <article class="event-card">
         <h3>Baraat</h3>
-        <p>Saturday, 21 November 2026</p>
         <p>12:30 PM onwards</p>
       </article>
-
       <article class="event-card">
         <h3>Reception</h3>
-        <p>Saturday, 21 November 2026</p>
         <p>7:30 PM onwards</p>
       </article>
     </div>
+  </div>
+</div>
   </section>
 
   <!-- VENUE -->
@@ -552,13 +646,6 @@
   <!-- WHATSAPP SHARING -->
   <footer class="footer">
     <p>With love, Ayush & Sonali</p>
-
-    <button class="button outline" id="shareButton"
-            type="button">
-      Share Invitation on WhatsApp
-    </button>
-
-    <p>Made with love for your special day.</p>
   </footer>
 
   <script>
@@ -603,19 +690,6 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // Share the published invitation URL.
-    document.getElementById("shareButton")
-      .addEventListener("click", () => {
-        const url = window.location.href;
-        const message =
-          "You're invited to celebrate Ayush & Sonali! " + url;
-
-        window.open(
-          "https://wa.me/?text=" + encodeURIComponent(message),
-          "_blank",
-          "noopener,noreferrer"
-        );
-      });
   </script>
 
 </body>
